@@ -34,3 +34,17 @@
 
 
 
+
+        ^S - Salvar arquivo 
+        Salva o arquivo de acordo com o nome que foi atribuido a ele na linha de COMANDOS
+
+        ^Z - Voltar 
+        Voltar dados, para atrás 
+
+        ^Y - Retormar
+        Dados apagados voltam para a tela 
+
+        ^X Ultima linha 
+         Ir para a ultima linha do arquivo
+        
+        
