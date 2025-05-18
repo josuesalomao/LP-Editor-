@@ -1,0 +1,8 @@
+{
+    "name":"LP Editor",
+    "version":"1.0.0",
+    "creator":"Pedro Josué",
+    "email":"pedrojosuesalomao12@yahoo.com",
+    "desciption":"Editor de Texto no terminal Linux, feito em PHP puro"
+
+}

@@ -1,0 +1,25 @@
+system("clear");
+system("stty raw");
+
+$arquivoescrita = fopen("php://stdin", "r");
+
+$options = getopt("f:hp", ["-f"]);
+
+$f = fopen($options["f"], "a+");
+
+$buffer_memoria = array();
+while(true){
+    
+    while($buffer = fgets($f, 250)){
+        echo $buffer;
+    }
+    $g = fread(STDIN, 1);
+    fwrite($f, $g);
+    if($g ==="q"){
+        system("stty sane");
+        break;
+    }
+    if($g==="\0x1b"){
+        echo "nao pode aqui, vamos sair?";
+    }
+}
