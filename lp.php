@@ -1,16 +1,14 @@
 <?php
 
    /*
-   
    se o arquivo existe, ele vai criar um buffer, pegar os dados do arquivo original e jogar nesse buffer,
    -> jogando em uma array e desse array jogando para o arquivo de teste, para verificando como vai ficar
-
-
+   
    caso o arquivo nao exista, ele vai criar um novo .pjs que é arquivo buffer, quando a pessoa clicar para salvar, ele vai criar um novo como a pessoa escreveu e apagar o arquivo temporario 
-
-
-
+   
    */
+
+include("./src/cursor.php");
 system("clear");
 
 $options = getopt("f:hp", ["-f"]);
@@ -25,11 +23,11 @@ function buffer_($arquivo_file){
    while($buffer = fgets($arquivo_file, 300)){ // lendo arquivo
       $e = explode("\n", $buffer);
       array_push($armazenamento, $e);
-      while(true){
-         $swap = @fopen($options["f"].".pjs", "a+");// cria um arquivo temporario 
-         for($pp = 0; $pp <= count($e)+1; $pp++){ // gravando coluna por coluna
+      $swap = @fopen($options["f"].".pjs", "a+");// cria um arquivo temporario 
+      for($pp = 0; $pp <= count($e)+1; $pp++){ // gravando coluna por coluna
                fwrite($swap, $armazenamento[0][$pp]);
             } 
+      while(true){
          while($bufferr = fgets($swap, 900)){ // ler o arquivo temporario   
             // envia os dados do aramazenamento para o arquivo temporario 
             echo $bufferr;
